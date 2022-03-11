@@ -1,0 +1,58 @@
+body {
+    margin: 0;
+    overflow: hidden;
+}
+
+.global{
+    background: black;
+    width: 100%;
+}
+
+#rectangle {
+    background: #cecece;
+    display: flex;
+    justify-content: center;
+    border: 1px solid black;
+    margin: 5px 1%;
+    position: absolute;
+    width: 98%;
+}
+
+#texte{
+    color: white;
+}
+
+.memos{
+    display: grid;
+    grid-template-columns:1fr 1fr ;
+}
+
+#memogauche{
+    height:440px;
+    background: #cecece;
+    display: flex;
+    justify-content: flex-start;
+    margin: 100px 30px 10px 40px;
+    border: 1px solid black;
+    flex-direction: column;
+}
+
+#tacheafaire{
+    height:30px;
+    background: #cecece;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 10px 0 10px;
+    border: 1px solid black;
+}
+
+#memodroite{
+    height:440px;
+    background: #cecece;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 100px 40px 20px;
+    border: 1px solid black;
+}
