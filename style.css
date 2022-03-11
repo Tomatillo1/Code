@@ -1,58 +1,60 @@
 body {
     margin: 0;
-    overflow: hidden;
-}
-
-.global{
     background: black;
-    width: 100%;
+    height:100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 #rectangle {
     background: #cecece;
     display: flex;
     justify-content: center;
-    border: 1px solid black;
-    margin: 5px 1%;
-    position: absolute;
-    width: 98%;
+    margin: 0.5rem 1rem 0.5rem 1rem;
 }
 
-#texte{
+#texte {
     color: white;
 }
 
-.memos{
+.memos {
     display: grid;
-    grid-template-columns:1fr 1fr ;
+    grid-template-columns: 1fr 1fr;
+    height: 100vh;
 }
 
-#memogauche{
-    height:440px;
+#memogauche {
     background: #cecece;
     display: flex;
-    justify-content: flex-start;
-    margin: 100px 30px 10px 40px;
-    border: 1px solid black;
-    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 0.5rem 0.5rem 1rem 1rem;
 }
 
-#tacheafaire{
-    height:30px;
+#tacheafaire {
     background: #cecece;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 10px 10px 0 10px;
     border: 1px solid black;
+    padding: 0 2rem 0 2rem;
+    margin: 1rem 0 0 0;
 }
 
-#memodroite{
-    height:440px;
+#memodroite {
+    background: #cecece;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 0.5rem 1rem 1rem 0.5rem;
+}
+
+#tachefini {
     background: #cecece;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 100px 40px 20px;
     border: 1px solid black;
+    padding: 0 2rem 0 2rem;
+    margin: 1rem 0 0 0;
 }
