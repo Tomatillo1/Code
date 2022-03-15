@@ -82,7 +82,6 @@ body {
 
 #rectangle1{
     width: 26.5%;
-    height: 40%;
     border: 1px solid black;
     margin:0.5rem 0 0 0;
     padding: 0 0 0 0.5rem;
@@ -95,4 +94,6 @@ body {
     height: 55%;
     margin: 0 0 0 0.5rem;
 }
+
+
 
