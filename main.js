@@ -17,6 +17,9 @@ const relou = document.getElementById("champstexte");
 relou.addEventListener("keyup", getValueIfEnterPressed)
 
 function duplic() {
+    let supprime = document.createElement("button")
+    supprime.className = "enlevertache"
+    supprime.innerText = "Delete"
     let getInput = getValue();
     if (getInput === '') {
         alert("Please enter a word")
@@ -26,13 +29,14 @@ function duplic() {
     let taches = document.createElement("div")
     taches.className = "rectangle1"
     taches.appendChild(nodeText)
-    document.getElementById("TacheQuiBougePas").appendChild(taches)
-    let supprime = document.createElement("button")
-    supprime.className = "enlevertache"
-    supprime.innerText = "Delete"
-    document.getElementById("TacheQuiBougePas").appendChild(supprime)
+    let block = document.createElement("div")
+    block.className = "blocktache"
+    block.appendChild(taches)
+    block.appendChild(supprime)
+    document.getElementById("TacheQuiBougePas").appendChild(block)
     document.getElementById("champstexte").value = "";
 }
+
 
 
 
