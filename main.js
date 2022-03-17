@@ -3,8 +3,10 @@ function getValue() {
 }
 
 const button = document.getElementById("valider");
-button.addEventListener("click", getValue);
-button.addEventListener("click", duplic);
+button.addEventListener("click", () => {
+    getValue()
+    duplic()
+});
 
 function getValueIfEnterPressed(event) {
     if(event.key !== "Enter") return;
@@ -21,12 +23,17 @@ function duplic() {
         return;
     }
     let nodeText = document.createTextNode(getInput)
-    let Taches = document.createElement("div")
-    Taches.id = "rectangle1"
-    Taches.appendChild(nodeText)
-    document.getElementById("TacheQuiBougePas").appendChild(Taches)
+    let taches = document.createElement("div")
+    taches.className = "rectangle1"
+    taches.appendChild(nodeText)
+    document.getElementById("TacheQuiBougePas").appendChild(taches)
+    let supprime = document.createElement("button")
+    supprime.className = "enlevertache"
+    supprime.innerText = "Delete"
+    document.getElementById("TacheQuiBougePas").appendChild(supprime)
     document.getElementById("champstexte").value = "";
 }
+
 
 
 

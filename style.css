@@ -80,7 +80,7 @@ body {
     width: 100%;
 }
 
-#rectangle1{
+.rectangle1{
     width: 26.5%;
     border: 1px solid black;
     margin:0.5rem 0 0 0;
@@ -92,6 +92,11 @@ body {
 
 #valider{
     height: 55%;
+    margin: 0 0 0 0.5rem;
+}
+
+.enlevertache{
+    height: 75%;
     margin: 0 0 0 0.5rem;
 }
 
