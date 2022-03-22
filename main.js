@@ -19,7 +19,7 @@ relou.addEventListener("keyup", getValueIfEnterPressed)
 function duplic() {
     let deletebutton = document.createElement("button")
     deletebutton.className = "enlevertache"
-    deletebutton.innerText = "Delete"
+    deletebutton.innerText = "Supprimer"
     let getInput = getValue();
     if (getInput === '') {
         alert("Please enter a word")

@@ -17,20 +17,15 @@ body {
     color: white;
 }
 
-.memos {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    height: 100vh;
-}
-
 #memogauche {
     background: #cecece;
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    margin: 0.5rem 0.5rem 1rem 1rem;
+    margin: 0.5rem 1rem 1rem 1rem;
     flex-direction: column;
-    padding: 0.5rem;
+    padding: 0.5rem 0 0 1rem;
+    height: 100vh;
 }
 
 #tacheafaire {
@@ -41,25 +36,6 @@ body {
     border: 1px solid black;
     padding: 0 2rem 0 2rem;
     margin: 0.5rem 0 0 0;
-    border-radius: 5px;
-}
-
-#memodroite {
-    background: #cecece;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    margin: 0.5rem 1rem 1rem 0.5rem;
-}
-
-#tachefini {
-    background: #cecece;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid black;
-    padding: 0 2rem 0 2rem;
-    margin: 1rem 0 0 0;
     border-radius: 5px;
 }
 
@@ -76,12 +52,16 @@ body {
     flex-direction: column;
 }
 
+#champstexte{
+    margin: 0.5rem 0 0 0;
+}
+
 #taskscontainer {
     width: 100%;
 }
 
 .rectangle1 {
-    width: 26.5%;
+    width: 25%;
     border: 1px solid black;
     margin: 0.5rem 0 0 0;
     padding: 0 0 0 0.5rem;
