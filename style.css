@@ -94,13 +94,12 @@ body {
     margin: 0 0 0 0.5rem;
 }
 
-#enlevertache {
+.enlevertache {
     margin: 0 0 0 0.5rem;
 }
 
-#blocktache {
+.blocktache {
     display: flex;
-    flex-direction: row;
     align-items: end;
 }
 

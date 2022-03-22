@@ -9,7 +9,7 @@ button.addEventListener("click", () => {
 });
 
 function getValueIfEnterPressed(event) {
-    if(event.key !== "Enter") return;
+    if (event.key !== "Enter") return;
     button.click();
 }
 
@@ -17,9 +17,9 @@ const relou = document.getElementById("champstexte");
 relou.addEventListener("keyup", getValueIfEnterPressed)
 
 function duplic() {
-    let supprime = document.createElement("button")
-    supprime.id = "enlevertache"
-    supprime.innerText = "Delete"
+    let deletebutton = document.createElement("button")
+    deletebutton.className = "enlevertache"
+    deletebutton.innerText = "Delete"
     let getInput = getValue();
     if (getInput === '') {
         alert("Please enter a word")
@@ -29,23 +29,18 @@ function duplic() {
     let tasktextcontainer = document.createElement("div")
     tasktextcontainer.className = "rectangle1"
     tasktextcontainer.appendChild(nodeText)
-    let taskcontainer = document.createElement("div")
-    taskcontainer.id = "blocktache"
-    taskcontainer.appendChild(tasktextcontainer)
-    taskcontainer.appendChild(supprime)
-    for (let i = 0; i< taskcontainer; i++) {
-        let blocks = taskcontainer[i]
-        blocks.setAttribute("id", i + 1)
-    }
-    document.getElementById("taskscontainer").appendChild(taskcontainer)
+    let ToDo = document.createElement("div")
+    ToDo.className = "blocktache"
+    deletebutton.addEventListener("click", () => {
+        document.getElementById("taskscontainer").removeChild(ToDo)
+    });
+
+    ToDo.appendChild(tasktextcontainer)
+    ToDo.appendChild(deletebutton)
+    document.getElementById("taskscontainer").appendChild(ToDo)
     document.getElementById("champstexte").value = "";
-    supprime.addEventListener("click",supprimeTache)
 }
 
-function supprimeTache(){
-    let finishdelete = document.getElementById("blocktache");
-    finishdelete.parentNode.removeChild(finishdelete);
-}
 
 
 
