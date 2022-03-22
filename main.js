@@ -18,7 +18,7 @@ relou.addEventListener("keyup", getValueIfEnterPressed)
 
 function duplic() {
     let supprime = document.createElement("button")
-    supprime.className = "enlevertache"
+    supprime.id = "enlevertache"
     supprime.innerText = "Delete"
     let getInput = getValue();
     if (getInput === '') {
@@ -26,16 +26,30 @@ function duplic() {
         return;
     }
     let nodeText = document.createTextNode(getInput)
-    let taches = document.createElement("div")
-    taches.className = "rectangle1"
-    taches.appendChild(nodeText)
-    let block = document.createElement("div")
-    block.className = "blocktache"
-    block.appendChild(taches)
-    block.appendChild(supprime)
-    document.getElementById("TacheQuiBougePas").appendChild(block)
+    let tasktextcontainer = document.createElement("div")
+    tasktextcontainer.className = "rectangle1"
+    tasktextcontainer.appendChild(nodeText)
+    let taskcontainer = document.createElement("div")
+    taskcontainer.id = "blocktache"
+    taskcontainer.appendChild(tasktextcontainer)
+    taskcontainer.appendChild(supprime)
+    for (let i = 0; i< taskcontainer; i++) {
+        let blocks = taskcontainer[i]
+        blocks.setAttribute("id", i + 1)
+    }
+    document.getElementById("taskscontainer").appendChild(taskcontainer)
     document.getElementById("champstexte").value = "";
+    supprime.addEventListener("click",supprimeTache)
 }
+
+function supprimeTache(){
+    let finishdelete = document.getElementById("blocktache");
+    finishdelete.parentNode.removeChild(finishdelete);
+}
+
+
+
+
 
 
 

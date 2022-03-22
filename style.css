@@ -76,34 +76,34 @@ body {
     flex-direction: column;
 }
 
-#TacheQuiBougePas {
+#taskscontainer {
     width: 100%;
 }
 
-.rectangle1{
+.rectangle1 {
     width: 26.5%;
     border: 1px solid black;
-    margin:0.5rem 0 0 0;
+    margin: 0.5rem 0 0 0;
     padding: 0 0 0 0.5rem;
     display: flex;
     align-items: center;
     background-color: white;
 }
 
-#valider{
-    height: 55%;
+#valider {
     margin: 0 0 0 0.5rem;
 }
 
-.enlevertache{
+#enlevertache {
     margin: 0 0 0 0.5rem;
 }
 
-.blocktache{
+#blocktache {
     display: flex;
     flex-direction: row;
     align-items: end;
 }
+
 
 
 
