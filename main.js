@@ -37,9 +37,27 @@ function duplic() {
 
     ToDo.appendChild(tasktextcontainer)
     ToDo.appendChild(deletebutton)
-    document.getElementById("taskscontainer").appendChild(ToDo)
+    let tasksContainer = document.getElementById("taskscontainer")
+    tasksContainer.appendChild(ToDo)
     document.getElementById("champstexte").value = "";
+    localStorage.setItem("name", tasksContainer.outerHTML)
 }
+
+let localTasks = localStorage.getItem("name")
+document.getElementById("taskscontainer").outerHTML = localTasks
+
+let ToDo = [...document.getElementsByClassName("blocktache")]
+
+ToDo.forEach((item) => {
+    let button = item.querySelector(".enlevertache");
+    button.addEventListener("click",() => {
+        const container = document.getElementById("taskscontainer")
+        console.log(container)
+        container.removeChild(item)
+    })
+})
+
+
 
 
 
