@@ -1,0 +1,204 @@
+.words {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1;
+}
+
+.word1,
+.word2,
+.word3,
+.word4,
+.word5 {
+    margin: 0;
+    position: absolute;
+}
+
+.word1 {
+    color: #153259;
+    font-size: clamp(1.6rem, 1.2741rem + 0.6799vw, 1.75rem);
+    font-family: poppins, serif;
+    top: 25%;
+    left: 27%;
+    transform: translate(-50%, -50%);
+    animation: word1-anim infinite linear 40s;
+}
+
+.word2 {
+    color: #006DFF;
+    font-size: clamp(1.4rem, 1.1827rem + 0.4533vw, 1.5rem);
+    font-family: poppins, serif;
+    top: 20%;
+    left: 65%;
+    transform: translate(-50%, -50%);
+    animation: word2-anim infinite linear 40s;
+}
+
+.word3 {
+    color: black;
+    font-size: clamp(2.2rem, 1.5482rem + 1.3598vw, 2.5rem);
+    font-family: poppins, serif;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: word3-anim infinite linear 40s;
+}
+
+.word4 {
+    color: #006DFF;
+    font-size: clamp(1.6rem, 1.2741rem + 0.6799vw, 1.75rem);
+    font-family: poppins, serif;
+    top: 70%;
+    left:20%;
+    transform: translate(-50%, -50%);
+    animation: word4-anim infinite linear 40s;
+}
+
+.word5 {
+    font-size: clamp(1.2rem, 1.0914rem + 0.2266vw, 1.25rem);
+    color: #153259;
+    font-family: poppins, serif;
+    top: 80%;
+    left: 75%;
+    transform: translate(-50%, -50%);
+    animation: word5-anim infinite linear 40s;
+}
+
+@keyframes word1-anim {
+    20% {
+        top: 50%;
+        left: 0;
+        transform: translate(0%, -50%);
+    }
+    40% {
+        top: 100%;
+        left: 50%;
+        transform: translate(-50%, -75%);
+    }
+    60% {
+        top: 50%;
+        left: 100%;
+        transform: translate(-100%, -50%);
+    }
+    80% {
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -25%);
+    }
+    100% {
+        top: 25%;
+        left: 27%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+@keyframes word2-anim {
+    20% {
+        top: 0;
+        left: 75%;
+        transform: translate(-50%, -25%);
+    }
+    40% {
+        top: 75%;
+        left: 100%;
+        transform: translate(-100%, -50%);
+    }
+    60% {
+        top: 100%;
+        left: 25%;
+        transform: translate(-50%, -75%);
+    }
+    80% {
+        top: 25%;
+        left: 0;
+        transform: translate(0%, -50%);
+    }
+    100% {
+        top: 20%;
+        left: 65%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+@keyframes word3-anim {
+    20% {
+        top: 100%;
+        left: 75%;
+        transform: translate(-50%, -75%);
+    }
+    40% {
+        top: 25%;
+        left: 100%;
+        transform: translate(-100%, -50%);
+    }
+    60% {
+        top: 0;
+        left: 25%;
+        transform: translate(-50%, -25%);
+    }
+    80% {
+        top: 75%;
+        left: 0;
+        transform: translate(0%, -50%);
+    }
+    100% {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+@keyframes word4-anim {
+    20% {
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -25%);
+    }
+    40% {
+        top: 100%;
+        left: 50%;
+        transform: translate(-50%, -75%);
+    }
+    60% {
+        top: 50%;
+        left: 0;
+        transform: translate(0%, -50%);
+    }
+    80% {
+        top: 50%;
+        left: 100%;
+        transform: translate(-100%, -50%);
+    }
+    100% {
+        top: 70%;
+        left: 20%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+@keyframes word5-anim {
+    20% {
+        top: 100%;
+        left: 0;
+        transform: translate(0%, -75%);
+    }
+    40% {
+        top: 0;
+        left: 100%;
+        transform: translate(-100%, -25%);
+    }
+    60% {
+        top: 0;
+        left: 0;
+        transform: translate(0%, -25%);
+    }
+    80% {
+        top: 100%;
+        left: 100%;
+        transform: translate(-100%, -75%);
+    }
+    100% {
+        top: 80%;
+        left: 75%;
+        transform: translate(-50%, -50%);
+    }
+}
