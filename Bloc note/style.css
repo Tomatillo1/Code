@@ -1,6 +1,7 @@
 body {
     background-color: #153259;
     height: 100vh;
+    overflow: hidden;
 }
 
 .bloc-note-title {
@@ -39,6 +40,7 @@ label {
     padding-left: 1rem;
     height: 80%;
     color: #153259;
+    font-family: Poppins, Arial;
 }
 
 #text-zone::placeholder {
@@ -51,3 +53,10 @@ textarea {
     resize: none;
 }
 
+#text-color {
+    border: unset;
+    background-color: unset;
+    padding: 0;
+    height: 30px;
+    width: 30px;
+}
