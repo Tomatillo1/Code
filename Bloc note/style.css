@@ -60,3 +60,17 @@ textarea {
     height: 30px;
     width: 30px;
 }
+
+#background-color {
+    border: unset;
+    background-color: unset;
+    padding: 0;
+    height: 30px;
+    width: 30px;
+}
+
+.color-button {
+    display: flex;
+    flex-direction: row;
+    gap: 20px
+}
