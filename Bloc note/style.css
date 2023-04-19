@@ -5,6 +5,10 @@ body {
     margin: 0;
 }
 
+.hide {
+    display: none !important;
+}
+
 .bloc-note-title {
     display: flex;
     justify-content: center;
@@ -43,6 +47,7 @@ body {
     width: 25%;
     gap: 1rem;
     height: 85%;
+    animation: blocnoteanimation 10s;
 }
 
 label {
