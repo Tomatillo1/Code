@@ -73,7 +73,7 @@ body {
     padding-top: 2rem;
 }
 
-.labelNote {
+.labelNote1, .labelNote2, .labelNote3, .labelNote4, .labelNote5, .labelNote6 {
     color: #FFFFFF;
     font-size: 0.75rem;
     font-family: Poppins, Arial;
@@ -115,7 +115,7 @@ textarea {
     width: 20px;
 }
 
-.color-button {
+.color-button1, .color-button2, .color-button3, .color-button4, .color-button5, .color-button6 {
     display: flex;
     flex-direction: row;
     align-items: center;

@@ -28,37 +28,35 @@ function doSomething(textAreaId, textColorId, backgroundColorId, textKey, textCo
     });
 }
 
-doSomething("text-zone1", "text-color1", "background-color1", "text1", "textColor1", "backGround1");
-doSomething("text-zone2", "text-color2", "background-color2", "text2", "textColor2", "backGround2");
-doSomething("text-zone3", "text-color3", "background-color3", "text3", "textColor3", "backGround3");
-doSomething("text-zone4", "text-color4", "background-color4", "text4", "textColor4", "backGround4");
-doSomething("text-zone5", "text-color5", "background-color5", "text5", "textColor5", "backGround5");
-doSomething("text-zone6", "text-color6", "background-color6", "text6", "textColor6", "backGround6");
+for (let i = 1; i < 7; i++) {
+    doSomething(`text-zone${i}`, `text-color${i}`, `background-color${i}`, `text${i}`, `textColor${i}`, `backGround${i}`);
+}
 
 function clickSomething(areaId) {
     const clickArea = document.querySelector(`#${areaId}`);
     //const labels = document.querySelectorAll('label.hide')
     const otherArea = document.querySelectorAll("textarea");
-    const addDivStyle = document.querySelector(".allBlocsNote")
+    const addDivStyle = document.querySelector(".allBlocsNote");
 
     clickArea.addEventListener("click", function (event) {
         for (let area of otherArea) {
             area.classList.add("hide");
             area.parentElement.classList.add("hide");
         }
+        const numberNote = areaId.slice(-1);
+        const label = document.querySelector(`.labelNote${numberNote}`);
+        const labelButtonColor =document.querySelector(`.color-button${numberNote}`);
+        label.classList.remove("hide");
+        labelButtonColor.classList.remove("hide");
         addDivStyle.classList.add("allBlocsNoteChanged");
         clickArea.parentElement.classList.remove("hide");
-        clickArea.parentElement.style.padding = "0 2rem 2rem 2rem";
         clickArea.classList.remove("hide");
+        clickArea.parentElement.style.padding = "0 2rem 2rem 2rem";
     });
-};
+}
 
-clickSomething("text-zone1");
-clickSomething("text-zone2");
-clickSomething("text-zone3");
-clickSomething("text-zone4");
-clickSomething("text-zone5");
-clickSomething("text-zone6");
+for (let i = 1; i < 7; i++) clickSomething(`text-zone${i}`);
+
 
 
 
