@@ -35,27 +35,30 @@ doSomething("text-zone4", "text-color4", "background-color4", "text4", "textColo
 doSomething("text-zone5", "text-color5", "background-color5", "text5", "textColor5", "backGround5");
 doSomething("text-zone6", "text-color6", "background-color6", "text6", "textColor6", "backGround6");
 
-function clickSomething(areaId, labelArea, buttonsArea) {
+function clickSomething(areaId) {
     const clickArea = document.querySelector(`#${areaId}`);
+    //const labels = document.querySelectorAll('label.hide')
     const otherArea = document.querySelectorAll("textarea");
-    const addLabel = document.querySelector(`#${labelArea}`);
-    const addButtons = document.querySelector(`#${buttonsArea}`);
+    const addDivStyle = document.querySelector(".allBlocsNote")
 
     clickArea.addEventListener("click", function (event) {
         for (let area of otherArea) {
             area.classList.add("hide");
+            area.parentElement.classList.add("hide");
         }
-        // addBlocNote.classList.remove("hide");
-        // addBlocNote.classList.add("active");
+        addDivStyle.classList.add("allBlocsNoteChanged");
+        clickArea.parentElement.classList.remove("hide");
+        clickArea.parentElement.style.padding = "0 2rem 2rem 2rem";
+        clickArea.classList.remove("hide");
     });
 };
 
-clickSomething("text-zone1", "hideLabel1", "hideButton1");
-clickSomething("text-zone2", "hideLabel2", "hideButton2");
-clickSomething("text-zone3", "hideLabel3", "hideButton3");
-clickSomething("text-zone4", "hideLabel4", "hideButton4");
-clickSomething("text-zone5", "hideLabel5", "hideButton5");
-clickSomething("text-zone6", "hideLabel6", "hideButton6");
+clickSomething("text-zone1");
+clickSomething("text-zone2");
+clickSomething("text-zone3");
+clickSomething("text-zone4");
+clickSomething("text-zone5");
+clickSomething("text-zone6");
 
 
 

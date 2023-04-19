@@ -5,14 +5,8 @@ body {
     margin: 0;
 }
 
-.hideLabel1, .hideLabel2, .hideLabel3, .hideLabel4, .hideLabel5, .hideLabel6, .hideButton1, .hideButton2, .hideButton3, .hideButton4, .hideButton5, .hideButton6 {
-    display: none;
-}
-
-.active {
-    display: grid;
-    grid-template-rows: 1fr;
-    grid-template-columns: 1fr;
+.hide {
+    display: none !important;
 }
 
 .bloc-note-title {
@@ -37,6 +31,12 @@ body {
     grid-template-rows: 1fr 1fr;
     height: 100%;
     gap: 2rem;
+}
+
+.allBlocsNoteChanged {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
 }
 
 .bloc-note {
@@ -120,6 +120,9 @@ textarea {
     flex-direction: row;
     align-items: center;
     gap: 20px;
+    color: #FFFFFF;
+    font-size: 0.75rem;
+    font-family: Poppins, Arial;
 }
 
 #text-zone2 {
