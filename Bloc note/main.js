@@ -34,7 +34,6 @@ for (let i = 1; i < 7; i++) {
 
 function clickSomething(areaId) {
     const clickArea = document.querySelector(`#${areaId}`);
-    //const labels = document.querySelectorAll('label.hide')
     const otherArea = document.querySelectorAll("textarea");
     const addDivStyle = document.querySelector(".allBlocsNote");
 
@@ -56,6 +55,7 @@ function clickSomething(areaId) {
 }
 
 for (let i = 1; i < 7; i++) clickSomething(`text-zone${i}`);
+
 
 
 
