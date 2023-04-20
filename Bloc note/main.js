@@ -44,7 +44,7 @@ function clickSomething(areaId) {
         }
         const numberNote = areaId.slice(-1);
         const label = document.querySelector(`.labelNote${numberNote}`);
-        const labelButtonColor =document.querySelector(`.color-button${numberNote}`);
+        const labelButtonColor = document.querySelector(`.color-button${numberNote}`);
         label.classList.remove("hide");
         labelButtonColor.classList.remove("hide");
         addDivStyle.classList.add("allBlocsNoteChanged");
@@ -52,13 +52,23 @@ function clickSomething(areaId) {
         clickArea.classList.remove("hide");
         clickArea.parentElement.style.padding = "0 2rem 2rem 2rem";
     });
+
+    const numberButton = areaId.slice(-1)
+    const findButtonId = document.querySelector(`.buttonReturn${numberButton}`)
+
+    findButtonId.addEventListener("click", function (event) {
+        clickArea.classList.add("hide");
+        addDivStyle.classList.remove("allBlocsNoteChanged");
+        const labelAfter = document.querySelector(`.labelNote${numberButton}`);
+        const labelButtonColorAfter = document.querySelector(`.color-button${numberButton}`);
+        labelAfter.classList.add("hide");
+        labelButtonColorAfter.classList.add("hide");
+        for (let areaAfter of otherArea) {
+            areaAfter.parentElement.classList.remove("hide");
+            areaAfter.classList.remove("hide");
+        }
+        clickArea.parentElement.style.padding = '';
+    });
 }
 
 for (let i = 1; i < 7; i++) clickSomething(`text-zone${i}`);
-
-
-
-
-
-
-
