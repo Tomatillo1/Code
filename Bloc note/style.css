@@ -280,16 +280,6 @@ textarea {
     flex-direction: row;
 }
 
-.buttonReturn1, .buttonReturn2, .buttonReturn3, .buttonReturn4, .buttonReturn5, .buttonReturn6 {
-    color: black;
-    font-size: 0.75rem;
-    font-family: Poppins, Arial;
-    padding: 0.5rem 1rem 0.5rem 1rem;
-    border-radius: 5px;
-    border: unset;
-    font-weight: bold;
-}
-
 .widthFirst {
     display: flex;
     width: 50%;
@@ -305,3 +295,47 @@ textarea {
     display: flex;
     justify-content: flex-end;
 }
+
+.buttonReturn1, .buttonReturn2, .buttonReturn3, .buttonReturn4, .buttonReturn5, .buttonReturn6 {
+    color: black;
+    font-size: 0.75rem;
+    font-family: Poppins, Arial;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    border-radius: 5px;
+    border: unset;
+    font-weight: bold;
+}
+
+.buttonBold1, .buttonBold2, .buttonBold3, .buttonBold4, .buttonBold5, .buttonBold6 {
+    color: black;
+    background-color: #FFFFFF;
+    font-size: 0.75rem;
+    font-family: Poppins, Arial;
+    font-weight: bold;
+    padding: 0.125rem 0.5rem 0.125rem 0.5rem;
+    border-radius: 5px;
+    border: unset;
+}
+
+.buttonItalic1, .buttonItalic2, .buttonItalic3, .buttonItalic4, .buttonItalic5, .buttonItalic6 {
+    color: black;
+    background-color: #FFFFFF;
+    font-size: 0.75rem;
+    font-family: Poppins, Arial;
+    font-style: italic;
+    padding: 0.125rem 0.625rem 0.125rem 0.625rem;
+    border-radius: 5px;
+    border: unset;
+}
+
+.buttonUnderline1, .buttonUnderline2, .buttonUnderline3, .buttonUnderline4, .buttonUnderline5, .buttonUnderline6 {
+    color: black;
+    background-color: #FFFFFF;
+    font-size: 0.75rem;
+    font-family: Poppins, Arial;
+    text-decoration: underline;
+    padding: 0.125rem 0.5rem 0.125rem 0.5rem;
+    border-radius: 5px;
+    border: unset;
+}
+
