@@ -37,7 +37,7 @@ function clickSomething(areaId) {
     const otherArea = document.querySelectorAll("textarea");
     const addDivStyle = document.querySelector(".allBlocsNote");
 
-    clickArea.addEventListener("click", function (event) {
+    clickArea.addEventListener("click", () => {
         for (let area of otherArea) {
             area.classList.add("hide");
             area.parentElement.classList.add("hide");
@@ -56,7 +56,7 @@ function clickSomething(areaId) {
     const numberButton = areaId.slice(-1);
     const findButtonId = document.querySelector(`.buttonReturn${numberButton}`);
 
-    findButtonId.addEventListener("click", function (event) {
+    findButtonId.addEventListener("click", () => {
         clickArea.classList.add("hide");
         addDivStyle.classList.remove("allBlocsNoteChanged");
         const labelAfter = document.querySelector(`.labelNote${numberButton}`);
@@ -74,7 +74,7 @@ function clickSomething(areaId) {
 for (let i = 1; i < 7; i++) clickSomething(`text-zone${i}`);
 
 
-function styleTextChange(areaFindId, textBoldKey) {
+function styleBoldChange(areaFindId, textBoldKey) {
     const areaChange = document.querySelector(`#${areaFindId}`);
     const numberForButtons = areaFindId.slice(-1);
     const boldButton = document.querySelector(`.buttonBold${numberForButtons}`);
@@ -96,4 +96,11 @@ function styleTextChange(areaFindId, textBoldKey) {
     });
 }
 
-for (let i = 1; i < 7; i++) styleTextChange(`text-zone${i}`, `textBold${i}`);
+for (let i = 1; i < 7; i++) styleBoldChange(`text-zone${i}`, `textBold${i}`);
+
+const resetLocalStorage = document.querySelector(".resetButton");
+
+resetLocalStorage.addEventListener("click", () => {
+    localStorage.clear();
+    location.reload();
+});
