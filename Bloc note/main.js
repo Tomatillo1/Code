@@ -53,8 +53,8 @@ function clickSomething(areaId) {
         clickArea.parentElement.style.padding = "0 2rem 2rem 2rem";
     });
 
-    const numberButton = areaId.slice(-1)
-    const findButtonId = document.querySelector(`.buttonReturn${numberButton}`)
+    const numberButton = areaId.slice(-1);
+    const findButtonId = document.querySelector(`.buttonReturn${numberButton}`);
 
     findButtonId.addEventListener("click", function (event) {
         clickArea.classList.add("hide");
@@ -72,3 +72,28 @@ function clickSomething(areaId) {
 }
 
 for (let i = 1; i < 7; i++) clickSomething(`text-zone${i}`);
+
+
+function styleTextChange(areaFindId, textBoldKey) {
+    const areaChange = document.querySelector(`#${areaFindId}`);
+    const numberForButtons = areaFindId.slice(-1);
+    const boldButton = document.querySelector(`.buttonBold${numberForButtons}`);
+    const isBold = localStorage.getItem(textBoldKey) === 'true';
+    if (isBold) {
+        areaChange.style.fontWeight = 'bold';
+    } else {
+        areaChange.style.fontWeight = 'normal';
+    }
+    boldButton.addEventListener('click', () => {
+        const isBold = localStorage.getItem(textBoldKey) === 'true';
+        if (isBold) {
+            areaChange.style.fontWeight = 'normal';
+            localStorage.setItem(textBoldKey, false);
+        } else {
+            areaChange.style.fontWeight = 'bold';
+            localStorage.setItem(textBoldKey, true);
+        }
+    });
+}
+
+for (let i = 1; i < 7; i++) styleTextChange(`text-zone${i}`, `textBold${i}`);

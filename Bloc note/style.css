@@ -298,6 +298,7 @@ textarea {
 
 .buttonReturn1, .buttonReturn2, .buttonReturn3, .buttonReturn4, .buttonReturn5, .buttonReturn6 {
     color: black;
+    background-color: #FFFFFF;
     font-size: 0.75rem;
     font-family: Poppins, Arial;
     padding: 0.5rem 1rem 0.5rem 1rem;
