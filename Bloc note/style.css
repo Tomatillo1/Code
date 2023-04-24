@@ -360,9 +360,19 @@ textarea {
     margin-top: 1rem;
 }
 
-#titleNote {
+#titleNote1, #titleNote2, #titleNote3, #titleNote4, #titleNote5, #titleNote6 {
     background-color: white;
     border: 1px solid white;
+    color: black;
+    font-family: Poppins, Arial;
+    font-size: 0.875rem;
+    text-align: center;
+}
+
+#titleNote1::placeholder, #titleNote2::placeholder, #titleNote3::placeholder, #titleNote4::placeholder, #titleNote5::placeholder, #titleNote6::placeholder {
+    font-size: 0.875rem;
+    font-family: Poppins, Arial;
+    text-align: center;
 }
 
 

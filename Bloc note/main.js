@@ -32,10 +32,11 @@ for (let i = 1; i < 7; i++) {
     doSomething(`text-zone${i}`, `text-color${i}`, `background-color${i}`, `text${i}`, `textColor${i}`, `backGround${i}`);
 }
 
-function clickSomething(areaId) {
+function clickSomething(areaId, titleId) {
     const clickArea = document.querySelector(`#${areaId}`);
     const otherArea = document.querySelectorAll("textarea");
     const addDivStyle = document.querySelector(".allBlocsNote");
+    const removeAttribute = document.querySelector(`#${titleId}`);
 
     clickArea.addEventListener("click", () => {
         for (let area of otherArea) {
@@ -47,6 +48,7 @@ function clickSomething(areaId) {
         const labelButtonColor = document.querySelector(`.color-button${numberNote}`);
         label.classList.remove("hide");
         labelButtonColor.classList.remove("hide");
+        removeAttribute.removeAttribute("disabled");
         addDivStyle.classList.add("allBlocsNoteChanged");
         clickArea.parentElement.classList.remove("hide");
         clickArea.classList.remove("hide");
@@ -63,6 +65,7 @@ function clickSomething(areaId) {
         const labelButtonColorAfter = document.querySelector(`.color-button${numberButton}`);
         labelAfter.classList.add("hide");
         labelButtonColorAfter.classList.add("hide");
+        removeAttribute.setAttribute("disabled", "");
         for (let areaAfter of otherArea) {
             areaAfter.parentElement.classList.remove("hide");
             areaAfter.classList.remove("hide");
@@ -71,7 +74,7 @@ function clickSomething(areaId) {
     });
 }
 
-for (let i = 1; i < 7; i++) clickSomething(`text-zone${i}`);
+for (let i = 1; i < 7; i++) clickSomething(`text-zone${i}`, `titleNote${i}`);
 
 
 function styleBoldChange(areaFindId, textBoldKey) {
@@ -105,3 +108,16 @@ resetLocalStorage.addEventListener("click", () => {
     location.reload();
 });
 
+function titleNoteStorage(titleNoteId, titleNoteKey) {
+    const titleNoteChange = document.querySelector(`#${titleNoteId}`);
+    const saveValueNoteTitle = localStorage.getItem(titleNoteKey);
+    console.log(saveValueNoteTitle)
+
+    titleNoteChange.value = saveValueNoteTitle;
+
+    titleNoteChange.addEventListener("input", function (event){
+        localStorage.setItem(titleNoteKey, event.target.value);
+    });
+}
+
+for (let i = 1; i < 7; i++) titleNoteStorage(`titleNote${i}`, `title-note-key${i}`);
