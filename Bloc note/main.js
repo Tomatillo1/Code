@@ -1,7 +1,8 @@
-function doSomething(textAreaId, textColorId, backgroundColorId, textKey, textColorKey, backgroundColorKey) {
+function handleColor(textAreaId, textColorId, backgroundColorId, textKey, textColorKey, backgroundColorKey, titleId) {
     const textarea = document.querySelector(`#${textAreaId}`);
     const textColor = document.querySelector(`#${textColorId}`);
     const backgroundColor = document.querySelector(`#${backgroundColorId}`);
+    const titleColors = document.querySelector(`#${titleId}`);
 
     const saveValue = localStorage.getItem(textKey);
     const saveColorValue = localStorage.getItem(textColorKey);
@@ -12,6 +13,8 @@ function doSomething(textAreaId, textColorId, backgroundColorId, textKey, textCo
     textColor.value = saveColorValue;
     textarea.style.backgroundColor = saveBackgroundColorValue;
     backgroundColor.value = saveBackgroundColorValue;
+    titleColors.style.color = saveColorValue;
+    titleColors.style.backgroundColor = saveBackgroundColorValue;
 
     textarea.addEventListener("input", function (event) {
         localStorage.setItem(textKey, event.target.value);
@@ -19,20 +22,18 @@ function doSomething(textAreaId, textColorId, backgroundColorId, textKey, textCo
 
     textColor.addEventListener("input", function (event) {
         textarea.style.color = event.target.value;
+        titleColors.style.color = event.target.value;
         localStorage.setItem(textColorKey, event.target.value);
     });
 
     backgroundColor.addEventListener("input", function (event) {
         textarea.style.backgroundColor = event.target.value;
+        titleColors.style.backgroundColor = event.target.value;
         localStorage.setItem(backgroundColorKey, event.target.value);
     });
 }
 
-for (let i = 1; i < 7; i++) {
-    doSomething(`text-zone${i}`, `text-color${i}`, `background-color${i}`, `text${i}`, `textColor${i}`, `backGround${i}`);
-}
-
-function clickSomething(areaId, titleId) {
+function handleTextAreaClick(areaId, titleId) {
     const clickArea = document.querySelector(`#${areaId}`);
     const otherArea = document.querySelectorAll("textarea");
     const addDivStyle = document.querySelector(".allBlocsNote");
@@ -74,13 +75,10 @@ function clickSomething(areaId, titleId) {
     });
 }
 
-for (let i = 1; i < 7; i++) clickSomething(`text-zone${i}`, `titleNote${i}`);
-
-
 function styleBoldChange(areaFindId, textBoldKey) {
     const areaChangeBold = document.querySelector(`#${areaFindId}`);
-    const numberForButtons = areaFindId.slice(-1);
-    const boldButton = document.querySelector(`.buttonBold${numberForButtons}`);
+    const numberForButtonBold = areaFindId.slice(-1);
+    const boldButton = document.querySelector(`.buttonBold${numberForButtonBold}`);
     const isBold = localStorage.getItem(textBoldKey) === 'true';
     if (isBold) {
         areaChangeBold.style.fontWeight = 'bold';
@@ -99,25 +97,76 @@ function styleBoldChange(areaFindId, textBoldKey) {
     });
 }
 
-for (let i = 1; i < 7; i++) styleBoldChange(`text-zone${i}`, `textBold${i}`);
+function styleItalicChange(areaFindId2, textItalicKey) {
+    const areaChangeItalic = document.querySelector(`#${areaFindId2}`);
+    const numberForButtonItalic = areaFindId2.slice(-1);
+    const ItalicButton = document.querySelector(`.buttonItalic${numberForButtonItalic}`);
+    const isItalic = localStorage.getItem(textItalicKey) === 'true';
+    if (isItalic) {
+        areaChangeItalic.style.fontStyle = 'italic';
+    } else {
+        areaChangeItalic.style.fontStyle = 'normal';
+    }
+    ItalicButton.addEventListener('click', () => {
+        const isItalic = localStorage.getItem(textItalicKey) === 'true';
+        if (isItalic) {
+            areaChangeItalic.style.fontStyle = 'normal';
+            localStorage.setItem(textItalicKey, false);
+        } else {
+            areaChangeItalic.style.fontStyle = 'italic';
+            localStorage.setItem(textItalicKey, true);
+        }
+    });
+}
 
-const resetLocalStorage = document.querySelector(".resetButton");
-
-resetLocalStorage.addEventListener("click", () => {
-    localStorage.clear();
-    location.reload();
-});
+function styleUnderlineChange(areaFindId3, textUnderlineKey) {
+    const areaChangeUnderline = document.querySelector(`#${areaFindId3}`);
+    const numberForButtonUnderline = areaFindId3.slice(-1);
+    const UnderlineButton = document.querySelector(`.buttonUnderline${numberForButtonUnderline}`);
+    const isUnderline = localStorage.getItem(textUnderlineKey) === 'true';
+    if (isUnderline) {
+        areaChangeUnderline.style.textDecoration = 'underline';
+    } else {
+        areaChangeUnderline.style.textDecoration = 'normal';
+    }
+    UnderlineButton.addEventListener('click', () => {
+        const isUnderline = localStorage.getItem(textUnderlineKey) === 'true';
+        if (isUnderline) {
+            areaChangeUnderline.style.textDecoration = 'normal';
+            localStorage.setItem(textUnderlineKey, false);
+        } else {
+            areaChangeUnderline.style.textDecoration = 'underline';
+            localStorage.setItem(textUnderlineKey, true);
+        }
+    });
+}
 
 function titleNoteStorage(titleNoteId, titleNoteKey) {
     const titleNoteChange = document.querySelector(`#${titleNoteId}`);
     const saveValueNoteTitle = localStorage.getItem(titleNoteKey);
-    console.log(saveValueNoteTitle)
-
-    titleNoteChange.value = saveValueNoteTitle;
 
     titleNoteChange.addEventListener("input", function (event){
         localStorage.setItem(titleNoteKey, event.target.value);
     });
+
+    titleNoteChange.value = saveValueNoteTitle;
 }
 
-for (let i = 1; i < 7; i++) titleNoteStorage(`titleNote${i}`, `title-note-key${i}`);
+const resetLocalStorage = document.querySelector(".resetButton");
+
+resetLocalStorage.addEventListener("click", () => {
+
+    if (confirm("Veux-tu supprimer toutes les notes ?") == true) {
+        localStorage.clear();
+        location.reload();
+    }
+});
+
+for (let i = 1; i < 7; i++) {
+    handleColor(`text-zone${i}`, `text-color${i}`, `background-color${i}`, `text${i}`, `textColor${i}`, `backGround${i}`, `titleNote${i}`);
+    handleTextAreaClick(`text-zone${i}`, `titleNote${i}`);
+    styleBoldChange(`text-zone${i}`, `textBold${i}`);
+    styleItalicChange(`text-zone${i}`, `textItalic${i}`);
+    styleUnderlineChange(`text-zone${i}`, `textUnderline${i}`);
+    titleNoteStorage(`titleNote${i}`, `title-note-key${i}`);
+}

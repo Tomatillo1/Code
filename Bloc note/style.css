@@ -87,6 +87,7 @@ body {
     color: #153259;
     font-family: Poppins, Arial;
     font-size: 0.625rem;
+    border: 1px solid white;
 }
 
 #text-zone1::placeholder {
@@ -123,6 +124,7 @@ textarea {
     color: #153259;
     font-family: Poppins, Arial;
     font-size: 0.625rem;
+    border: 1px solid white;
 }
 
 #text-zone2::placeholder {
@@ -155,6 +157,7 @@ textarea {
     color: #153259;
     font-family: Poppins, Arial;
     font-size: 0.625rem;
+    border: 1px solid white;
 }
 
 #text-zone3::placeholder {
@@ -187,6 +190,7 @@ textarea {
     color: #153259;
     font-family: Poppins, Arial;
     font-size: 0.625rem;
+    border: 1px solid white;
 }
 
 #text-zone4::placeholder {
@@ -219,6 +223,7 @@ textarea {
     color: #153259;
     font-family: Poppins, Arial;
     font-size: 0.625rem;
+    border: 1px solid white;
 }
 
 #text-zone5::placeholder {
@@ -251,6 +256,7 @@ textarea {
     color: #153259;
     font-family: Poppins, Arial;
     font-size: 0.625rem;
+    border: 1px solid white;
 }
 
 #text-zone6::placeholder {
