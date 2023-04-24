@@ -75,22 +75,22 @@ for (let i = 1; i < 7; i++) clickSomething(`text-zone${i}`);
 
 
 function styleBoldChange(areaFindId, textBoldKey) {
-    const areaChange = document.querySelector(`#${areaFindId}`);
+    const areaChangeBold = document.querySelector(`#${areaFindId}`);
     const numberForButtons = areaFindId.slice(-1);
     const boldButton = document.querySelector(`.buttonBold${numberForButtons}`);
     const isBold = localStorage.getItem(textBoldKey) === 'true';
     if (isBold) {
-        areaChange.style.fontWeight = 'bold';
+        areaChangeBold.style.fontWeight = 'bold';
     } else {
-        areaChange.style.fontWeight = 'normal';
+        areaChangeBold.style.fontWeight = 'normal';
     }
     boldButton.addEventListener('click', () => {
         const isBold = localStorage.getItem(textBoldKey) === 'true';
         if (isBold) {
-            areaChange.style.fontWeight = 'normal';
+            areaChangeBold.style.fontWeight = 'normal';
             localStorage.setItem(textBoldKey, false);
         } else {
-            areaChange.style.fontWeight = 'bold';
+            areaChangeBold.style.fontWeight = 'bold';
             localStorage.setItem(textBoldKey, true);
         }
     });
@@ -104,3 +104,4 @@ resetLocalStorage.addEventListener("click", () => {
     localStorage.clear();
     location.reload();
 });
+

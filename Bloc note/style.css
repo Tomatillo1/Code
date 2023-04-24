@@ -352,3 +352,17 @@ textarea {
     border: unset;
     margin: 1rem 0 0 1rem;
 }
+
+.titleNoteDesign {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+#titleNote {
+    background-color: white;
+    border: 1px solid white;
+}
+
+
