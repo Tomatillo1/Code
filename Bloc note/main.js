@@ -127,12 +127,12 @@ function styleUnderlineChange(areaFindId3, textUnderlineKey) {
     if (isUnderline) {
         areaChangeUnderline.style.textDecoration = 'underline';
     } else {
-        areaChangeUnderline.style.textDecoration = 'normal';
+        areaChangeUnderline.style.textDecoration = 'none';
     }
     UnderlineButton.addEventListener('click', () => {
         const isUnderline = localStorage.getItem(textUnderlineKey) === 'true';
         if (isUnderline) {
-            areaChangeUnderline.style.textDecoration = 'normal';
+            areaChangeUnderline.style.textDecoration = 'none';
             localStorage.setItem(textUnderlineKey, false);
         } else {
             areaChangeUnderline.style.textDecoration = 'underline';
@@ -140,6 +140,8 @@ function styleUnderlineChange(areaFindId3, textUnderlineKey) {
         }
     });
 }
+
+
 
 function titleNoteStorage(titleNoteId, titleNoteKey) {
     const titleNoteChange = document.querySelector(`#${titleNoteId}`);
